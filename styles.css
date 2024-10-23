@@ -1,0 +1,294 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background and container styling */
+body {
+    background-color: #fff7e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.thank-you-container {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #d3ad66;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    animation: pop-in 1.5s ease-out forwards;
+}
+
+/* Background animation for a glitter effect */
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('glitter.jpg') repeat;
+    opacity: 0.3;
+    z-index: -1;
+    animation: shimmer 3s infinite;
+}
+
+/* Text animations */
+.date {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    animation: fadeIn 2s ease-out;
+}
+
+h1 {
+    color: #2e2d2d;
+    font-size: 3em;
+    font-weight: bold;
+    font-family: cursive;
+    letter-spacing: 3px;
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+.message {
+    color: #555;
+    font-size: 1.5em;
+    font-family:cursive;
+    animation: fadeIn 2.5s ease-out;
+}
+
+/* Animations */
+@keyframes shimmer {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes pop-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes textGlow {
+    0%, 100% {
+        text-shadow: 0 0 5px #d3ad66, 0 0 10px #d3ad66, 0 0 20px #d3ad66;
+    }
+    50% {
+        text-shadow: 0 0 20px #d3ad66, 0 0 30px #d3ad66, 0 0 40px #d3ad66;
+    }
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    .message {
+        font-size: 1.2em;
+    }
+}
+/* Balloon container */
+.balloon-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Balloon styling */
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    background: radial-gradient(circle at 30% 30%, #f9d423, #fff6d0);
+    border-radius: 50%;
+    animation: floatUp infinite;
+    opacity: 0.8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Different balloon variations */
+.balloon1 { left: 10%; animation-duration: 6s; background: radial-gradient(circle at 30% 30%, #ffeb88, #e6b800); }
+.balloon2 { left: 20%; animation-duration: 8s; background: radial-gradient(circle at 30% 30%, #ffd1dc, #ff99aa); }
+.balloon3 { left: 30%; animation-duration: 7s; background: radial-gradient(circle at 30% 30%, #ffecb3, #ffd54f); }
+.balloon4 { left: 40%; animation-duration: 9s; background: radial-gradient(circle at 30% 30%, #ffccbc, #ff8a65); }
+.balloon5 { left: 50%; animation-duration: 6.5s; background: radial-gradient(circle at 30% 30%, #b3e5fc, #29b6f6); }
+.balloon6 { left: 60%; animation-duration: 10s; background: radial-gradient(circle at 30% 30%, #c8e6c9, #81c784); }
+.balloon7 { left: 70%; animation-duration: 8.5s; background: radial-gradient(circle at 30% 30%, #f3e5f5, #ce93d8); }
+.balloon8 { left: 80%; animation-duration: 7.5s; background: radial-gradient(circle at 30% 30%, #ffab91, #ff7043); }
+.balloon9 { left: 15%; animation-duration: 6.8s; background: radial-gradient(circle at 30% 30%, #ffe0b2, #ffb74d); }
+.balloon10 { left: 35%; animation-duration: 8.2s; background: radial-gradient(circle at 30% 30%, #d7ccc8, #a1887f); }
+.balloon11 { left: 55%; animation-duration: 9.1s; background: radial-gradient(circle at 30% 30%, #f8bbd0, #f48fb1); }
+.balloon12 { left: 75%; animation-duration: 7.3s; background: radial-gradient(circle at 30% 30%, #dcedc8, #c5e1a5); }
+
+/* Balloon float animation */
+@keyframes floatUp {
+    0% {
+        bottom: -100px;
+        transform: translateX(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateX(30px) rotate(15deg);
+        opacity: 1;
+    }
+    100% {
+        bottom: 100vh;
+        transform: translateX(-30px) rotate(-15deg);
+        opacity: 0;
+    }
+}
+/* Confetti container */
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Confetti styling */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background-color: gold;
+    opacity: 0.9;
+    transform-origin: left bottom;
+    animation: confetti-fall linear forwards;
+    border-radius: 2px;
+}
+
+/* Animation for falling confetti */
+/* Confetti fall animation to stop halfway or at the bottom */
+/* Animation for falling confetti */
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(calc(90vh + 20px)) rotate(30deg); /* Adjust to 70vh or 50vh for final position */
+        opacity: 0; 
+    }
+    50% {
+        transform: translateY(calc(90vh + 20px)) rotate(-30deg); /* Adjust to 70vh or 50vh for final position */
+        opacity: 0; 
+    }
+}
+
+/* The animation */
+
+.confetti {
+    animation: confetti-fall 2s linear infinite;
+    }
+
+/* Different color variations for confetti */
+.color1 { background-color: #f9d423; } /* Gold */
+.color2 { background-color: #ffd1dc; } /* Pastel Pink */
+.color3 { background-color: #ffecb3; } /* Light Yellow */
+.color4 { background-color: #ffccbc; } /* Pastel Orange */
+.color5 { background-color: #b3e5fc; } /* Light Blue */
+.color6 { background-color: #c8e6c9; } /* Light Green */
+.color7 { background-color: #f3e5f5; } /* Light Purple */
+.color8 { background-color: #ffab91; } /* Peach */
+.color9 { background-color: #ffe0b2; } /* Soft Orange */
+.color10 { background-color: #f8bbd0; } /* Light Pink */
+
+/* Thank You container */
+.thank-you-container {
+    position: relative;
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    animation: breathing 3s ease-in-out infinite; /* Breathing effect animation */
+    display: inline-block;
+}
+
+/* Breathing animation */
+@keyframes breathing {
+    0%, 100% {
+        transform: scale(1); /* Original size */
+    }
+    50% {
+        transform: scale(1.05); /* Slightly zoomed in */
+    }
+}
+/* Gradient background for the entire webpage */
+body {
+    background: linear-gradient(135deg, #fce98b, #ffecd2, #f4fca9, #ffe5bd);
+    background-size: 200% 200%;
+    animation: gradient-animation 10s ease-in-out infinite;
+    margin: 0;
+    padding: 0;
+}
+
+/* Gradient animation to add a subtle effect */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Balloon float animation with random movement */
+@keyframes floatUp {
+    0% {
+        bottom: -100px;
+        transform: translateX(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translateX(calc(20px * var(--random-dir))) rotate(var(--random-rotation));
+    }
+    50% {
+        bottom: 100vh;
+        transform: translateX(calc(-20px * var(--random-dir))) rotate(-15deg);
+        opacity: 0;
+    }
+    100% {
+        bottom: 100vh;
+        transform: translateX(calc(-30px * var(--random-dir))) rotate(-15deg);
+        opacity: 0;
+    }
+}
+
+
